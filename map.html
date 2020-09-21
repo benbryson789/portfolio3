@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detroit Google Map</title>
+
+
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+          height: 400px;  /* The height is 400 pixels */
+          width: 100%;  /* The width is the width of the web page */
+         }
+      </style>
+
+</head>
+<body>
+
+
+    <h3>Google Map of Detroit</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Detroit
+  var detroit = {lat: 42.331429, lng: -83.045753 };
+  // The map, centered at Detroit
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: detroit});
+  // The marker, positioned at Detroit
+  var marker = new google.maps.Marker({position: detroit, map: map});
+}
+    </script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl9n31MOEpTXm4Q9aiX-5G9FgaUqSMvKM&callback=initMap">
+    </script>
+
+    
+</body>
+</html>
